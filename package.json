@@ -1,0 +1,14 @@
+{
+  "name": "backend-tb-cc",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "harsya",
+  "license": "ISC",
+  "description": "Backend untuk deployment di TB CC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
