@@ -2,8 +2,8 @@ let todos = [];
 
 exports.getTodos = (req, res) => {
   res.json({
-    status: "Sukses",
-    message: "Data to-do berhasil diambil",
+    status: "success",
+    message: "Data retrieved successfully",
     data: todos
   });
 };
@@ -20,8 +20,8 @@ exports.addTodo = (req, res) => {
   };
   todos.push(newTodo);
   res.json({
-    status: "Sukses",
-    message: "Berhasil menambahkan to-do baru",
+    status: "success",
+    message: "Data created successfully",
     data: newTodo
   });
 };
@@ -32,14 +32,14 @@ exports.getTodoById = (req, res) => {
   
   if (!todo) {
     return res.json({
-      status: "Error",
-      message: "Tidak ada to-do dengan ID yang diberikan"
+      status: "error",
+      message: "To-do with the given ID not found"
     });
   }
   
   res.json({
-    status: "Sukses",
-    message: "Data to-do berhasil diambil",
+    status: "success",
+    message: "Data retrieved successfully",
     data: todo
   });
 };
@@ -51,8 +51,8 @@ exports.updateTodo = (req, res) => {
 
   if (todoIndex === -1) {
     return res.json({
-      status: "Error",
-      message: "Tidak ada to-do dengan ID yang diberikan"
+      status: "error",
+      message: "To-do with the given ID not found"
     });
   }
 
@@ -66,8 +66,8 @@ exports.updateTodo = (req, res) => {
   };
 
   res.json({
-    status: "Sukses",
-    message: "Berhasil memperbarui to-do",
+    status: "success",
+    message: "Data updated successfully",
     data: todos[todoIndex]
   });
 };
@@ -78,15 +78,15 @@ exports.deleteTodo = (req, res) => {
 
   if (todoIndex === -1) {
     return res.json({
-      status: "Error",
-      message: "Tidak ada to-do dengan ID yang diberikan"
+      status: "error",
+      message: "To-do with the given ID not found"
     });
   }
 
   todos.splice(todoIndex, 1);
   
   res.json({
-    status: "Sukses",
-    message: "Berhasil menghapus to-do",
+    status: "success",
+    message: "Data deleted successfully",
   });
 };
