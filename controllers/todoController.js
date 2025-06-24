@@ -1,3 +1,5 @@
+const { v4: uuidv4 } = require('uuid');
+
 let todos = [];
 
 exports.getTodos = (req, res) => {
@@ -20,9 +22,9 @@ exports.addTodo = (req, res) => {
   }
 
   const newTodo = {
-    id: todos.length + 1,  // ID yang unik, bisa dikembangkan lebih lanjut jika diperlukan
+    id: uuidv4(),  // Generate a unique ID using uuid
     title,
-    description,
+    description: description || "",
     completed: false,  // Default status completed = false
     dueDate,  // Menggunakan format string yang sama seperti frontend (YYYY-MM-DD)
     createdAt: new Date().toISOString()
